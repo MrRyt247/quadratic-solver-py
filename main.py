@@ -3,7 +3,6 @@ import openpyxl
 import math
 
 df = pd.read_excel('input.xlsx')
-
 wb = openpyxl.load_workbook('input.xlsx')
 ws_output = wb['Output']
 count = 0
@@ -38,16 +37,12 @@ def read():
         a, b, c = l[0], l[1], l[2]
         calculate_roots(a, b, c)
     count = 0
-
 read()
 
 def create_sheet():
     wb.create_sheet('Output')
     wb.save('input.xlsx')
 
-
 def delete_sheet():
     wb.remove(wb['Output'])
     wb.save('input.xlsx')
-
-    
