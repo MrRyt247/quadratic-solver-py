@@ -3,7 +3,7 @@ import openpyxl
 import math
 
 df = pd.read_excel('input.xlsx')
-print(df)
+
 wb = openpyxl.load_workbook('input.xlsx')
 ws_output = wb['Output']
 count = 0
