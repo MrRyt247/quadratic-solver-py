@@ -26,7 +26,7 @@ def calculate_roots(a, b, c):
     if determinant >= 0:                    # Real roots calcaltion
         x_one = (-b + math.sqrt(determinant)) / 2 * a
         x_two = (-b - math.sqrt(determinant)) / 2 * a
-        write(x_one, x_two, count)
+        write_ans(x_one, x_two, count)
     else:                                   # Complex roots error handling
         write_err(count)
 
