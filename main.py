@@ -2,9 +2,9 @@ import pandas as pd
 import openpyxl 
 import math
 
-df = pd.read_excel(r"C:\Users\HP\Desktop\input.xlsx")
+df = pd.read_excel('input.xlsx')
 print(df)
-wb = openpyxl.load_workbook(r"C:\Users\HP\Desktop\input.xlsx")
+wb = openpyxl.load_workbook('input.xlsx')
 ws_input = wb['Input']
 count = 0
 
@@ -40,11 +40,11 @@ read()
 
 def create_sheet():
     wb.create_sheet('Output')
-    wb.save(r"C:\Users\HP\Desktop\input.xlsx")
+    wb.save('input.xlsx')
 
 
 def delete_sheet():
     wb.remove(wb['Output'])
-    wb.save(r"C:\Users\HP\Desktop\input.xlsx")
+    wb.save('input.xlsx')
 
     
