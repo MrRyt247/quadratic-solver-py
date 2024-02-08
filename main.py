@@ -13,14 +13,12 @@ def write_ans(x, y, i):
 def write_err(i):
     ws.cell(row = i, column = 1, value = 'This equation has complex roots')
 
-def calculate_roots(a, b, c):
+def calculate_roots(a, b, c, count):
     if a == 0:                                     # Verify quadratic equation
         print("Not a quadratic equation. a cannot be zero")
     else:   
         determinant = (b)**2 - 4 * a * c           # Calculate determinant
-        global count                               # References global count variable
-        count += 1
-        
+
         if determinant >= 0:                       # Calculates only real roots
             x_one = (-b + math.sqrt(determinant)) / (2 * a)
             x_two = (-b - math.sqrt(determinant)) / (2 * a)      
@@ -43,6 +41,6 @@ def read():
     for i, row in df.iterrows():                    # Fetches values from each cell
         l = row.to_list()
         a, b, c = l[0], l[1], l[2]
-        calculate_roots(a, b, c)                    # Calculates for each row
+        calculate_roots(a, b, c, i)                    # Calculates for each row
     wb.save('test.xlsx')
 read()
