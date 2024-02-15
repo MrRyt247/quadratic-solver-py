@@ -16,10 +16,10 @@ def calculate_roots(a, b, c, i):
     if a == 0:                                     # Verify quadratic equation
         ws.cell(row = i, column = 1, value = 'Not a quadratic equation. \'a\' cannot be zero')
     else:   
-        determinant = (b)**2 - 4 * a * c           # Calculate determinant
-        if determinant >= 0:                       # Calculates only real roots
-            x_one = (-b + sqrt(determinant)) / (2 * a)
-            x_two = (-b - sqrt(determinant)) / (2 * a)      
+        discriminant = (b)**2 - 4 * a * c           # Calculate discriminant
+        if discriminant >= 0:                       # Calculates only real roots
+            x_one = (-b + sqrt(discriminant)) / (2 * a)
+            x_two = (-b - sqrt(discriminant)) / (2 * a)      
             write_ans(x_one, x_two, i)
         else:                                      # Complex roots error handling
             write_err(i)
